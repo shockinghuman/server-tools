@@ -1,0 +1,24 @@
+{
+    "name": "shockinghuman/server-tools",
+    "description": "Server utilities for monitoring and maintenance",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "ShockingHuman\\ServerTools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Charles",
+            "email": "charles@webdevjm.com",
+            "homepage": "https://shockinghuman.wdj.pw",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "symfony/console": "^5.4",
+        "symfony/http-client": "^5.4"
+    },
+    "bin": ["bin/pingnet"]
+}

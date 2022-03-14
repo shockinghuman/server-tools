@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+set_time_limit(0);
+if (file_exists(__DIR__.'/../../../autoload.php')) {
+    require __DIR__.'/../../../autoload.php';
+} else {
+    require __DIR__.'/../vendor/autoload.php';
+}
+
+use Symfony\Component\Console\Application;
+use ShockingHuman\ServerTools\Commands\Check;
+use ShockingHuman\ServerTools\Commands\Initialize;
+use ShockingHuman\ServerTools\Commands\SystemD;
+use ShockingHuman\ServerTools\Commands\URLList;
+
+$application = new Application();
+$application->setName("PingNet");
+$application->setVersion("0.1.0");
+
+// ... register commands
+$application->add(new URLList('url'));
+$application->add(new Check('check'));
+$application->add(new SystemD('sys'));
+$application->add(new Initialize('init'));
+//$application->setDefaultCommand('init', true);
+
+$application->run();
